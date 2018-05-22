@@ -1,7 +1,7 @@
 let request = require('request');
 let JSSoup = require('jssoup').default;
 
-function getNewRiddle() {
+function getRandomRiddle() {
     let pages = 22;
     let page = Math.floor(Math.random() * pages) + 1;
 
@@ -16,12 +16,13 @@ function getNewRiddle() {
         
                 let posts = soup.findAll("article");
                 let post = posts[Math.floor(Math.random() * posts.length)]
-        
+                
                 soup = new JSSoup(post);
         
                 let riddle = soup.find("h2", "entry-title").text;
-    
-                resolve({"success": true, "message": riddle});
+                let answer = soup.find("div", "su-spoiler-content").text;
+
+                resolve({"success": true, "riddle": riddle, "answer": answer});
             } 
             catch (err) {
                 resolve({"success": false, "message": "something went wrong"});
@@ -30,4 +31,4 @@ function getNewRiddle() {
     })
 }
 
-exports.getNewRiddle = getNewRiddle;
+exports.getRandomRiddle = getRandomRiddle;
