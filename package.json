@@ -11,6 +11,6 @@
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
     "jssoup": "0.0.7",
-    "request": "^2.86.0"
+    "request": "^2.87.0"
   }
 }
