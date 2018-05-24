@@ -5,7 +5,7 @@ function getRandomRiddle() {
     let pages = 22;
     let page = Math.floor(Math.random() * pages) + 1;
 
-    return fetch("http://www.heavens-above.com", {timeout: 0})
+    return fetch("http://www.heavens-above.com", {timeout: 2000})
         .then(res => res.text())
         .then(body => {
           let soup = new JSSoup(body);

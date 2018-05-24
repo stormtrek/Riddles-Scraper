@@ -10,7 +10,6 @@ let appRouter = function(app) {
             return res.send({error: "something went wrong"});
         })
     });
-
 }
 
 module.exports = appRouter;
