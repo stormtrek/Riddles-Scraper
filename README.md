@@ -1,3 +1,3 @@
 # Riddles Scraper
 
-REST API which scrapes riddles off https://riddles.fyi
+REST API which randomly generates riddles scraped off https://riddles.fyi
